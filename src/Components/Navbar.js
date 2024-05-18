@@ -9,9 +9,9 @@ function ColorSchemesExample() {
     <>
       <Navbar bg="primary" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand as={Link} to="/">Weather App</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/WeatherApp">Weather App</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link as={Link} to="/" className="mx-3">Home</Nav.Link>
+            <Nav.Link as={Link} to="/WeatherApp" className="mx-3">Home</Nav.Link>
             <Nav.Link as={Link} to="/about">About</Nav.Link>
           </Nav>
         </Container>

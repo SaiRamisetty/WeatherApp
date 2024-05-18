@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import style from "./Styles/WeatherForm.css";
 import { useNavigate } from "react-router-dom";
 
-const WeatherForm = ({ setWeatherData }) => {
+const WeatherForm = ({ setWeatherData , setError }) => {
   const [Location, setLocation] = useState("");
   const navigate = useNavigate();
 
@@ -21,11 +21,22 @@ const WeatherForm = ({ setWeatherData }) => {
 
     try {
       const response = await axios.get(ApiURL);
-      setWeatherData(response.data);
-      console.log(response.data);
-      navigate("/result");
+        setWeatherData(response.data);
+        console.log(response.data);
+        navigate("/result");
     } catch (err) {
-      console.log("Fetching data from API was not successful");
+      if (err.response && err.response.data && err.response.data.cod === "404") {
+        setError("Location not found. Please enter a valid location.");
+        navigate("/result");
+      } 
+      else if (err.response && err.response.data && err.response.data.cod === "400") {
+        setError("Invalid location input. Please enter a valid location.");
+        navigate("/result");
+      }
+      else {
+        setError("Fetching data from API was not successful");
+        navigate("/result");
+      }
     }
   };
 

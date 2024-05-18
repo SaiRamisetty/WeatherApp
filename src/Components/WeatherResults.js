@@ -10,7 +10,7 @@ import flike from "../assets/thermometer.gif";
 import maxtemp from "../assets/sunrise.gif";
 import mintemp from "../assets/sunset.gif";
 import weatherr from "../assets/mountain.gif";
-const WeatherResult = ({ weatherData }) => {
+const WeatherResult = ({ weatherData, Error }) => {
   const navigate = useNavigate();
   const [dateTime, setDateTime] = useState(new Date());
   useEffect(() => {
@@ -28,9 +28,16 @@ const WeatherResult = ({ weatherData }) => {
   const Day = dateTime.toLocaleDateString("en-US", { weekday: "long" });
   if (!weatherData) {
     return (
-      <div>
-        <p>No weather data available. Please go back and enter a location.</p>
-        <button onClick={() => navigate("/")}>Back</button>
+      <div className="errorblock">
+        <div className="errorblock2">
+          <h1 style={{ fontFamily: "poppins", fontSize: "30px" }}> {Error}</h1>
+          <button
+            style={{ borderRadius: "30px" }}
+            onClick={() => navigate("/WeatherApp")}
+          >
+            ← Back
+          </button>
+        </div>
       </div>
     );
   }
@@ -39,7 +46,12 @@ const WeatherResult = ({ weatherData }) => {
     <>
       <div className="netcontainer">
         <div className="mx-3">
-          <button onClick={() => navigate("/")}>← Back</button>
+          <button
+            style={{ borderRadius: "20px", padding: "10px 30px" }}
+            onClick={() => navigate("/WeatherApp")}
+          >
+            ← Back
+          </button>
         </div>
         <div className="Dashboard" style={styles}>
           <div className="Block">
@@ -100,7 +112,9 @@ const WeatherResult = ({ weatherData }) => {
               <div className="windspeed ">
                 <img src={wind} alt="windspeed" />
                 <p>Wind Speed</p>
-                <h4 className="my-1">{weatherData.wind.speed} <sub>m/sec</sub></h4>
+                <h4 className="my-1">
+                  {weatherData.wind.speed} <sub>m/sec</sub>
+                </h4>
               </div>
               <div className="humidity">
                 <img src={humi} alt="humidity" />

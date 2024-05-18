@@ -8,12 +8,13 @@ import About from './Components/About';
 
 function App() {
   const [WeatherData, setWeatherData] = useState(null);
+  const [Error , setError] = useState('');
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<WeatherForm setWeatherData={setWeatherData} />} />
-        <Route path="/result" element={<WeatherResult weatherData={WeatherData} />} />
+        <Route path="/WeatherApp" element={<WeatherForm setWeatherData={setWeatherData} setError={setError} />} />
+        <Route path="/result" element={<WeatherResult weatherData={WeatherData} Error = {Error} />} />
         <Route path="/about" element={<About />} />
       </Routes>
     </Router>
