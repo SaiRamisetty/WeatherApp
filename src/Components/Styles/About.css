@@ -1,0 +1,55 @@
+.block {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.block::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url(/src/assets/weatherBackg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.4;
+  /* filter: blur(8px); */
+  z-index: -1;
+}
+.about-container{
+    display: flex;
+    flex-direction: column;
+    max-width: 990px;
+    padding: 20px;
+    font-family: poppins, Arial, sans-serif;
+    border-radius: 10px;
+    background-color: rgba(255, 255,255, 0.4);
+    /* justify-content: center;
+    align-items: center; */
+}
+
+h1{
+  /* background-color: #0D6EFD; */
+  color: #000000;
+  font-size: 40px;
+}
+
+p {
+  line-height: 1.6;
+  color: #2c2d2c;
+  padding: 10px;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: #000000;
+  padding: 10px;
+}
+
+ul ul {
+  list-style-type: circle;
+}

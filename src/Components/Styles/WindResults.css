@@ -1,0 +1,143 @@
+.netcontainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+.netcontainer button{
+    background-color: rgb(0, 145, 255);
+    border-radius: 50px;
+    padding: 15px;
+    color: white;
+    border: none;
+    transition: 0.2s ease-in-out;
+}
+.Dashboard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family:'poppins','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+.Block{
+    position: relative;
+    height: fit-content;
+    width: fit-content;
+    border: 2px solid  rgb(167, 171, 174);
+    padding: 15px;
+    border-radius: 15px;
+   
+}
+.Block::before {
+    content: ""; 
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url(/src/assets/Backg.gif);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    z-index: -1;
+    filter: blur(15px);
+    -webkit-filter: blur(15px);
+  }
+.block-1{
+    position:static;
+    display: flex;
+    height: 300px;
+    width: 700px;
+    flex-direction: column;
+    background-color: transparent;
+    height: fit-content;
+}
+.block-2{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: transparent;
+    height: 180px;
+    width: 700px;
+}
+.location{
+    display: flex;
+    justify-content: space-around;
+}
+.location img{
+    height: 60px;
+    width: 60px;
+    mix-blend-mode: darken;
+}
+.locationsub1{
+    display: flex;
+    align-items: center;
+}
+.heat{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.temperature{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: left;
+    
+}
+.temperature img{
+    height: 130px;
+    width: 130px;
+    justify-items: center;
+    align-items: center;
+    mix-blend-mode: darken;
+}
+.tempcomp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.tempcompsub{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.tempcompsub div{
+    padding: 2px;
+}
+.tempcomp img{
+    height: 80px;
+    width: 80px;
+    mix-blend-mode: darken;
+    
+}
+.feelslike{
+    display: flex ;
+    justify-content: space-around;
+    align-items: center;
+}
+.feelslike h4{
+    font-size: 40px ;
+}
+.feelslikesub{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: end;
+    /* gap: 4px; */
+}
+.temp{
+    font-size: 80px;
+}
+.block-2 img{
+    height: 60px;
+    width: 60px;
+    mix-blend-mode: darken;
+}
+.Mintemp h5,.Maxtemp h5{
+    text-align: center;
+}
